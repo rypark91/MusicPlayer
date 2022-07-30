@@ -1,0 +1,25 @@
+body{
+    background-color: #2d1b4a;
+}
+
+p, h2, footer{
+    color: yellow;
+}
+h2{
+    margin-top: 20px;
+}
+#song{
+    font-size: 20px;
+}
+#prev, #next{
+    background-color: orange;
+    color: orangered;
+    border: none;
+}
+#playpause{
+    background-color: red;
+    color: gold;
+    border: none;
+}
+
+  
