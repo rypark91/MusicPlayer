@@ -54,14 +54,15 @@ nextButton.addEventListener("click", function(){
         placeHolder.pause();
         track++;
         placeHolder = new Audio(playList[track].path);
-        timeSlide.value = "0";
-        timeSlide.max = placeHolder.duration.toString();
+        
         placeHolder.onloadedmetadata = function(){
             song.innerText = playList[track].name;
             artist.innerText = playList[track].artist;
             pic.src = playList[track].img;
             time.innerText = `${formatTime(Math.floor(timeSlide.value))}/${formatTime(Math.floor(placeHolder.duration))}`;
             placeHolder.currentTime = timeSlide.value;
+            timeSlide.value = "0";
+            timeSlide.max = placeHolder.duration.toString();
             
         };
         if(isPlaying){
@@ -79,13 +80,15 @@ prevButton.addEventListener("click", function(){
         placeHolder.pause();
         track--;
         placeHolder = new Audio(playList[track].path);
-        timeSlide.value = "0";
-        timeSlide.max = placeHolder.duration.toString();
+        
         
         placeHolder.onloadedmetadata = function(){
             song.innerText = playList[track].name;
             artist.innerText = playList[track].artist;
             pic.src = playList[track].img;
+
+            timeSlide.value = "0";
+            timeSlide.max = placeHolder.duration.toString();
         
             time.innerText = `${formatTime(Math.floor(timeSlide.value))}/${formatTime(Math.floor(placeHolder.duration))}`;
             placeHolder.currentTime = timeSlide.value;
